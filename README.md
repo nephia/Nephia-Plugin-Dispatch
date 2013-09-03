@@ -1,14 +1,14 @@
 # NAME
 
-Voson::Plugin::Dispatch - Dispatcher Plugin for Voson
+Nephia::Plugin::Dispatch - Dispatcher Plugin for Nephia
 
 # DESCRIPTION
 
-This plugin provides dispatcher feature to Voson.
+This plugin provides dispatcher feature to Nephia.
 
 # SYNOPSIS
 
-    use Voson plugins => ['Dispatch'];
+    use Nephia plugins => ['Dispatch'];
     
 
     my $users = {};

@@ -3,9 +3,9 @@ use warnings;
 use Test::More;
 use Plack::Test;
 use HTTP::Request::Common qw/GET POST PUT DELETE/;
-use Voson::Core;
+use Nephia::Core;
 
-my $v = Voson::Core->new(
+my $v = Nephia::Core->new(
     plugins => [qw/Dispatch/],
     app => sub {
         my $app = shift;

@@ -1,8 +1,8 @@
-package Voson::Plugin::Dispatch;
+package Nephia::Plugin::Dispatch;
 use 5.008005;
 use strict;
 use warnings;
-use parent 'Voson::Plugin';
+use parent 'Nephia::Plugin';
 use Router::Simple;
 
 our $VERSION = "0.01";
@@ -72,15 +72,15 @@ __END__
 
 =head1 NAME
 
-Voson::Plugin::Dispatch - Dispatcher Plugin for Voson
+Nephia::Plugin::Dispatch - Dispatcher Plugin for Nephia
 
 =head1 DESCRIPTION
 
-This plugin provides dispatcher feature to Voson.
+This plugin provides dispatcher feature to Nephia.
 
 =head1 SYNOPSIS
 
-    use Voson plugins => ['Dispatch'];
+    use Nephia plugins => ['Dispatch'];
     
     my $users = {};
     

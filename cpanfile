@@ -1,5 +1,5 @@
 requires 'perl', '5.008001';
-requires 'Voson';
+requires 'Nephia';
 requires 'Router::Simple';
 
 on 'test' => sub {
