@@ -4,7 +4,7 @@
       "ytnobody <ytnobody@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.6.3, CPAN::Meta::Converter version 2.132140",
+   "generated_by" : "Minilla/v0.6.5, CPAN::Meta::Converter version 2.132510",
    "license" : [
       "perl_5"
    ],
@@ -42,7 +42,7 @@
       },
       "runtime" : {
          "requires" : {
-            "Nephia" : "0",
+            "Nephia" : "0.80",
             "Router::Simple" : "0",
             "perl" : "5.008005"
          }
@@ -56,13 +56,13 @@
    "release_status" : "unstable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/ytnobody/Nephia-Plugin-Dispatch/issues"
+         "web" : "https://github.com/nephia/Nephia-Plugin-Dispatch/issues"
       },
-      "homepage" : "https://github.com/ytnobody/Nephia-Plugin-Dispatch",
+      "homepage" : "https://github.com/nephia/Nephia-Plugin-Dispatch",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/ytnobody/Nephia-Plugin-Dispatch.git",
-         "web" : "https://github.com/ytnobody/Nephia-Plugin-Dispatch"
+         "url" : "git://github.com/nephia/Nephia-Plugin-Dispatch",
+         "web" : "https://github.com/nephia/Nephia-Plugin-Dispatch"
       }
    },
    "version" : "0.01"
