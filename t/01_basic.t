@@ -8,8 +8,6 @@ use Nephia::Core;
 my $v = Nephia::Core->new(
     plugins => [qw/Dispatch/],
     app => sub {
-        my $app = shift;
-        $app->{active} = undef;
         get('/' => sub {
             my $req = req();
             [200, [], 'OK'];
@@ -19,21 +17,25 @@ my $v = Nephia::Core->new(
             [200, [], 'hoge'];
         });
         get('/user' => sub {
+            my $app = shift;
             my $id = $app->{active} || 'noname';
             [200, [], "id = $id"];
         });
         post('/user/:id' => sub {
+            my $app = shift;
             my $id = path_param('id');
             $app->{active} = $id;
             [200, [], "done"];
         });
         put('/user/:id' => sub {
+            my $app = shift;
             my $id = path_param('id');
             $app->{active} ||= '';
             $app->{active} .= $id;
             [200, [], "appended"];
         });
         del('/user' => sub {
+            my $app = shift;
             $app->{active} = undef;
             [200, [], "deleted"];
         });

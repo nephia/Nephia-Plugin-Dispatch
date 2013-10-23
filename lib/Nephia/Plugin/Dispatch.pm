@@ -46,7 +46,7 @@ sub path_param {
 sub path {
     my ($self, $context, $method) = @_;
     my $router = $self->app->{router};
-    return sub ($&) {
+    return sub ($;@) {
         my ($path, $code) = @_;
         my @pathes = ref($path) eq 'ARRAY' ? @$path : ( $path );
         $router->connect($_, {action => $code}, {method => $method}) for @pathes;
