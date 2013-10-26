@@ -5,7 +5,7 @@ use warnings;
 use parent 'Nephia::Plugin';
 use Router::Simple;
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 sub exports {
     qw/get post put del path_param/;
@@ -80,8 +80,18 @@ This plugin provides dispatcher feature to Nephia.
 
 =head1 SYNOPSIS
 
+    package My::NephiaApp;
     use Nephia plugins => ['Dispatch'];
     
+    {   ### External Controller Class
+        package My::NephiaApp::C::External;
+        sub index {
+            my $c = shift;             # Nephia::Core object
+            my $id = $c->param('id');  # You may call param method via Nephia::Core object
+            [200, [], ["id = $id"]];
+        }
+    };
+
     my $users = {};
     
     app {
@@ -100,7 +110,9 @@ This plugin provides dispatcher feature to Nephia.
             $users->{$id} = { name => $name };
             [200, [], 'registered!'];
         };
+        get '/external/' => Nephia->call('C::External#index');
     };
+    
 
 =head1 DSL
 

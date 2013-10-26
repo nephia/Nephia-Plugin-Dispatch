@@ -8,8 +8,18 @@ This plugin provides dispatcher feature to Nephia.
 
 # SYNOPSIS
 
+    package My::NephiaApp;
     use Nephia plugins => ['Dispatch'];
     
+
+    {   ### External Controller Class
+        package My::NephiaApp::C::External;
+        sub index {
+            my $c = shift;             # Nephia::Core object
+            my $id = $c->param('id');  # You may call param method via Nephia::Core object
+            [200, [], ["id = $id"]];
+        }
+    };
 
     my $users = {};
     
@@ -30,7 +40,11 @@ This plugin provides dispatcher feature to Nephia.
             $users->{$id} = { name => $name };
             [200, [], 'registered!'];
         };
+        get '/external/' => Nephia->call('C::External#index');
     };
+    
+
+
 
 # DSL
 
