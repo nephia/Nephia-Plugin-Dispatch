@@ -25,7 +25,7 @@ sub dispatch {
     my $router = $app->{router};
     my $req    = $context->get('req');
     my $env    = $req->env;
-    my $res    = [404, [], ['not found']];
+    my $res    = $app->dsl('res_404') ? $app->dsl('res_404')->() : [404, [], ['not found']];
     if (my $p = $router->match($env) ) {
         my $action = delete $p->{action};
         $context->set(path_param => $p);
