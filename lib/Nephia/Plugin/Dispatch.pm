@@ -5,7 +5,7 @@ use warnings;
 use parent 'Nephia::Plugin';
 use Router::Simple;
 
-our $VERSION = "0.02";
+our $VERSION = "0.03";
 
 sub exports {
     qw/get post put del path_param/;
